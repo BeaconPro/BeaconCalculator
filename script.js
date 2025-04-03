@@ -1,18 +1,23 @@
-function appendValue(value) {
-  const display = document.getElementById('display');
-  display.value += value;
+// script.js
+
+let display = document.getElementById('display');
+
+function appendNumber(number) {
+    display.value += number;
+}
+
+function appendOperator(operator) {
+    display.value += ` ${operator} `;
 }
 
 function clearDisplay() {
-  const display = document.getElementById('display');
-  display.value = '';
+    display.value = '';
 }
 
-function calculate() {
-  const display = document.getElementById('display');
-  try {
-    display.value = eval(display.value);
-  } catch {
-    display.value = 'Error';
-  }
+function calculateResult() {
+    try {
+        display.value = eval(display.value);
+    } catch (error) {
+        display.value = 'Error';
+    }
 }
