@@ -65,3 +65,14 @@ function compareLess() {
     document.getElementById("display").value = currentInput;
   }
 }
+function calculateResult() {
+  try {
+    // Replace ^ with ** for exponentiation
+    let expression = currentInput.replace(/\^/g, '**');
+    currentInput = eval(expression).toString();
+    document.getElementById("display").value = currentInput;
+  } catch (e) {
+    document.getElementById("display").value = "Error";
+    currentInput = "";
+  }
+}
